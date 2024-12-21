@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@starwit/react-image-annotate": "file:react-image-annotate-5.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-picture-annotation": "^1.2.0"
