@@ -1,0 +1,8 @@
+#root {
+  max-width: 1280px;
+  min-width: 94vw;
+  height: 90vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
