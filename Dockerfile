@@ -1,5 +1,5 @@
 # Use a Python + Node.js base image
-FROM nikolaik/python3.13-nodejs22-alpine
+FROM nikolaik/python-nodejs:latest
 
 # Set the working directory to /app
 WORKDIR /app
