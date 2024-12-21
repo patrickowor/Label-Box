@@ -1,4 +1,4 @@
-const BASEURL = "http://127.0.0.1:4000";
+const BASEURL = "https://label-box.onrender.com";
 export function urlConstructor(url: string){
     return `${BASEURL}${url.startsWith('/') ? url : '/' + url}`
 }

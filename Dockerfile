@@ -24,4 +24,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 4000
 
 # Run the application
-CMD ["uvicorn", "--port", "4000", "app.main:app"]
+CMD ["uvicorn", "--port", "4000","--host", "0.0.0.0", "app.main:app"]

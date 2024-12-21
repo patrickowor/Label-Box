@@ -10,6 +10,10 @@ from app.authentication import auth_handler
 from sqlmodel import select, delete
 import base64 as B64
 import json
+from os.path import isfile
+from fastapi import Response
+from mimetypes import guess_type
+import os
 
 app = APIRouter()
 
@@ -213,3 +217,22 @@ async def get_asset_file(
     }
 
     return Response(content=file, media_type=asset.content_type, headers=headers)
+
+
+
+
+@app.get("/{filename:path}")
+async def get_site(filename):
+    if filename.strip() == '' or filename.strip() == '/':
+        filename = 'index.html'
+    filename = os.path.join(os.getcwd(), 'template', 'dist', filename)
+    print(filename)
+
+    if not(os.path.exists(filename) and os.path.isfile(filename)):
+        return Response(status_code=404)
+
+    with open(filename, encoding="utf-8") as f:
+        content = f.read()
+
+    content_type, _ = guess_type(filename)
+    return Response(content, media_type=content_type)

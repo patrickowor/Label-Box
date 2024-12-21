@@ -42,10 +42,11 @@ app.add_middleware(
 
 app.include_router(viewableRouter)
 
-if (not os.path.exists("template/public")):
-    os.mkdir("template/public")
+# if (not os.path.exists("template/public")):
+#     os.mkdir("template/public")
+# directory = os.path.join(os.getcwd(), 'template', 'public')
 
-app.mount("/", StaticFiles(directory="template"), name="static")
+# app.mount("/view", StaticFiles(directory=directory, ), name="static")
 
 @app.on_event("startup")
 async def on_startup():
