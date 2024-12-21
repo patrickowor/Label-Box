@@ -219,7 +219,7 @@ async def get_asset_file(
     return Response(content=file, media_type=asset.content_type, headers=headers)
 
 
-
+# to load thefront end code
 
 @app.get("/{filename:path}")
 async def get_site(filename):
